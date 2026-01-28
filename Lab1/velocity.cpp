@@ -1,7 +1,5 @@
 #include <iostream>
-#include <chrono>
 using namespace std;
-using namespace std::chrono;
 
 // Given recursive function
 int findTips(double v)
@@ -21,4 +19,5 @@ int v;
     
 
     return 0;
+
 }
