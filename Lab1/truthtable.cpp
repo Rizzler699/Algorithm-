@@ -4,23 +4,22 @@
 using namespace std;
 using namespace std::chrono;
 
-bool a[20];   // Array to store T/F values
+bool a[20]; 
 
-// Recursive Backtracking Truth Table Generator
+
 void BTT(int k, int n)
 {
     if (k > n)
     {
-        // Normally: print a[1..n]
-        // Skipped printing for accurate time measurement
+      
         return;
     }
 
-    a[k] = true;      // Assign T
-    BTT(k + 1, n);    // Recur
+    a[k] = true;      
+    BTT(k + 1, n);    
 
-    a[k] = false;     // Assign F
-    BTT(k + 1, n);    // Recur
+    a[k] = false;    
+    BTT(k + 1, n);    
 }
 
 int main()
@@ -29,12 +28,12 @@ int main()
 
     cout << "Inputs(n)\tAverageTime(us)\n";
 
-    // Vary input size from 2 to 15
+    
     for (int n = 2; n <= 15; n++)
     {
         long long totalTime = 0;
 
-        // Repeat experiment 100 times
+        
         for (int i = 0; i < repetitions; i++)
         {
             auto start = high_resolution_clock::now();
@@ -49,4 +48,5 @@ int main()
     }
 
     return 0;
+
 }
