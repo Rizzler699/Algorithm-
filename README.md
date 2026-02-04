@@ -129,33 +129,29 @@ Educational purposes to understand recursion and backtracking
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- 3. Horner’s Rule 
+ 3. Polynomial Evaluation using Horner’s Rule
 
- Aim
+Aim
+To evaluate the value of a polynomial at a given value of x using Horner’s Rule efficiently.
 
-To evaluate a polynomial efficiently in a recursive way.
-
- Algorithm
-
-long long horner(const vector<int>& coeff, int x, int index) {
-   
-    if (index == coeff.size() - 1)
-        return coeff[index];
-
-    
-    return coeff[index] + x * horner(coeff, x, index + 1);
-}
-
-
+Algorithm
+1. Read degree n of the polynomial.
+2. Read coefficients from highest degree to constant term.
+3. Read the value of x.
+4. Set result = first coefficient (highest degree coefficient).
+5. For i = 1 to n:
+       result = result * x + coeff[i]
+6. Print result.
 
  Time Complexity
-
 * Time: O(n)
 * Space: O(1) iterative, O(n) recursive
 
- Use Case
+ Use Cases
 
-Used in polynomial evaluation, numerical methods, and compiler design.
+Fast evaluation of polynomials in mathematics and engineering
+Used in numerical methods and scientific computing.
+Competitive programming problems involving polynomial calculations
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -459,24 +455,24 @@ To generate truth tables for n boolean variables and analyze exponential growth.
 void BTT(int k, int n)
 {
     if (k > n)
-    {
-        // Normally: print a[1..n]
-        // Skipped printing for accurate time measurement
         return;
-    }
 
-    a[k] = true;          BTT(k + 1, n);    
+    a[k] = true;
+    BTT(k + 1, n);
 
-    a[k] = false;       BTT(k + 1, n);    
+    a[k] = false;
+    BTT(k + 1, n);
+}
+  
 
  Time Complexity
-
 * Time: O(2^n)
 * Space: O(n)
 
- Use Case
-
+ Use Cases
 Digital logic design, boolean algebra, and circuit analysis.
+Backtracking and recursion practice
+Exhaustive testing for small boolean input problems
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
