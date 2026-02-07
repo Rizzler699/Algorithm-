@@ -684,4 +684,105 @@ Used as a subroutine in advanced algorithms like Tim Sort
 
 Simple and easy to implement for educational purposes
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+13. Merge Sort
+
+Aim: To sort an array in ascending order using the Merge Sort algorithm and analyze its execution time.
+
+Algorithm
+
+Read the number of elements n.
+
+Read n elements into an array.
+
+If l < r:
+
+Find mid = (l + r) / 2
+
+Apply Merge Sort on left part (l to mid)
+
+Apply Merge Sort on right part (mid+1 to r)
+
+Merge both sorted parts into one sorted array.
+
+Repeat until the entire array is sorted.
+
+Print the sorted array.
+
+Time Complexity
+
+Best Case: O(n log n)
+
+Average Case: O(n log n)
+
+Worst Case: O(n log n)
+
+Space Complexity
+
+Space: O(n)
+
+Use Cases
+
+Used for sorting large datasets.
+
+Suitable for external sorting (file sorting).
+
+Useful when stable sorting is required.
+
+Used in linked list sorting.
+
+Applied in divide and conquer based applications
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. Quick Sort
+Aim
+
+To sort an array in ascending order using the Quick Sort algorithm and analyze its execution time.
+
+Algorithm
+
+Read the number of elements n.
+
+Read n elements into an array.
+
+Select the first element as the pivot.
+
+Rearrange the array so that:
+
+Elements greater than pivot go to the right side.
+
+Elements smaller than pivot go to the left side.
+
+Place the pivot in its correct position.
+
+Apply Quick Sort on left and right subarrays.
+
+Repeat until the entire array is sorted.
+
+Print the sorted array.
+
+Time Complexity
+
+Best Case: O(n log n)
+
+Average Case: O(n log n)
+
+Worst Case: O(n²)
+
+Space Complexity
+
+Space: O(log n) (Recursive stack)
+
+Use Cases
+
+Used for fast in-memory sorting.
+
+Suitable for large datasets.
+
+Commonly used in system libraries.
+
+Useful in competitive programming.
+
+Applied in real-time applications where speed is important.
