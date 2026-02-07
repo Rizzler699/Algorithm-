@@ -737,9 +737,8 @@ Applied in divide and conquer based applications
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 14. Quick Sort
-Aim
 
-To sort an array in ascending order using the Quick Sort algorithm and analyze its execution time.
+Aim: To sort an array in ascending order using the Quick Sort algorithm and analyze its execution time.
 
 Algorithm
 
