@@ -784,4 +784,58 @@ Commonly used in system libraries.
 
 Useful in competitive programming.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Finding kth smallest element using partition algorithm.
+
+Aim: To implement a C++ program to find the kth smallest element in an array using the Quick Sort algorithm and analyze its efficiency.
+
+Algorithm
+
+Step 1: Read the size of the array n.
+
+Step 2: Input n elements into the array.
+
+Step 3: Read the value of k (position of the smallest element to find).
+
+Step 4: Use the partition() function to place the pivot element at its correct position.
+
+Step 5: Compare the pivot position with k:
+
+If pivot position + 1 == k, return that element.
+
+If pivot position + 1 < k, search in the right sub-array.
+
+If pivot position + 1 > k, search in the left sub-array.
+
+Step 6: Repeat the process recursively until the kth smallest element is found.
+
+Step 7: Display the result.
+
+Time Complexity
+Case	        Time Complexity
+Best Case	        O(n)
+Average Case       	O(n)
+Worst Case          O(n²)
+
+
+Explanation:
+In most cases, the array is divided into two parts, so it runs in linear time.
+
+In the worst case (already sorted array), the pivot is always smallest/largest, leading to O(n²).
+
+Space Complexity
+O(1) (In-place algorithm, no extra array is used)
+
+Use Cases
+Finding the kth smallest/largest score in a class.
+
+Selecting the median of a dataset.
+
+Ranking systems (finding top-k elements).
+
+Data analysis for percentile calculations.
+
+Competitive programming problems.
+
 Applied in real-time applications where speed is important.
