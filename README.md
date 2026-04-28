@@ -143,7 +143,7 @@ Use Cases
 Understanding recursion and divide-and-conquer strategy
 Teaching and learning recursion concepts
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  5. Bubble Sort (Time Complexity Analysis)
 
@@ -605,7 +605,8 @@ Use Cases
 Finding boundary points in computer graphics
 Used in geographical mapping (GIS)
 
-------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 17. Knapsack problem
 Aim:To implement a C++ program to solve the 0/1 Knapsack problem using recursion and find the maximum profit.
@@ -636,6 +637,8 @@ Use Cases:
 - Resource allocation problems
 - Budget optimization under constraints
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 18. Activity Selection Problem
  Aim:
 To implement a C++ program to select the maximum number of non-overlapping activities using a greedy approach.
@@ -662,6 +665,8 @@ O(1) (in-place sorting, no extra space used apart from variables)
 Use Cases:
 - Scheduling meetings in a room
 - CPU process scheduling
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 19. Dijkstra's Algorithm
 Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices using Dijkstra’s algorithm.
@@ -692,6 +697,8 @@ O(n) (for distance and visited arrays)
 Use Cases:
 - Finding shortest path in road networks
 - Network routing protocols
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 20. Kruskal's Algorithm
 Aim:To implement a C++ program to find the Minimum Spanning Tree (MST) of a graph using Kruskal’s algorithm.
@@ -725,6 +732,8 @@ Use Cases:
 - Designing network connections (like cables, roads)
 - Minimum cost infrastructure planning
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 21. Prim's Algorithm
 Aim:To implement a C++ program to find the Minimum Spanning Tree (MST) of a graph using Prim’s algorithm.
 
@@ -754,6 +763,8 @@ O(n) (for visited array)
 Use Cases:
 - Network design (minimum wiring or cabling)
 - Road and bridge construction planning
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 22. Dijkstra’s Algorithm (with path tracing)
 Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices and display the paths using Dijkstra’s algorithm.
@@ -791,6 +802,8 @@ Use Cases:
 - Navigation systems (shortest route finding)
 - Network routing and path optimization
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 23. Multistage Graph (Stage Identification)
 Aim:To implement a C++ program to determine the number of stages in a multistage graph using adjacency matrix representation.
 
@@ -818,6 +831,8 @@ O(n²) (adjacency matrix) + O(n) (for storing stages)
 Use Cases:
 - Used in multistage graph problems (like shortest path in stages)
 - Useful in dynamic programming and decision-making processes
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 24. Matrix Chain Multiplication
 Aim:To implement a C++ program to find the optimal order of matrix multiplication that minimizes the total number of scalar multiplications using dynamic programming.
@@ -853,6 +868,8 @@ Use Cases:
 - Optimizing matrix multiplication in computations
 - Used in compiler optimization and scientific computing
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 25. Multistage Graph
 Aim:To implement a C++ program to find the shortest path in a multistage graph using dynamic programming.
 
@@ -882,6 +899,8 @@ O(n²) (adjacency matrix) + O(n) (cost and path arrays)
 Use Cases:
 - Multistage decision problems (like shortest path with stages)
 - Network routing and optimization in layered systems
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 26. Bellman-Ford Algorithm
 Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices using the Bellman-Ford algorithm.
@@ -913,6 +932,8 @@ O(V) (for distance array)
 Use Cases:
 - Graphs with negative edge weights
 - Network routing and financial calculations (currency arbitrage detection)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 27. Travelling Salesman Problem
 Aim:To implement a C++ program to find the minimum travelling cost using the Travelling Salesman Problem (TSP) with backtracking.
