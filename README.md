@@ -580,7 +580,8 @@ Selecting the median of a dataset.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-16. Aim:To implement a C++ program to find the Convex Hull of a set of points using a brute force approach.
+16. Convex Hull
+Aim:To implement a C++ program to find the Convex Hull of a set of points using a brute force approach.
 
 Algorithm
 Step 1: Read the number of points n.
@@ -603,3 +604,345 @@ O(n)
 Use Cases
 Finding boundary points in computer graphics
 Used in geographical mapping (GIS)
+
+------------------------------------------------------------------------------------------------------
+
+17. Knapsack problem
+Aim:To implement a C++ program to solve the 0/1 Knapsack problem using recursion and find the maximum profit.
+
+Algorithm:
+Step 1: Read the number of items n.
+Step 2: Input weights and values of all items.
+Step 3: Read the knapsack capacity W.
+Step 4: Define recursive function knapsack(wt, val, n, W):
+        - If n == 0 or W == 0, return 0.
+        - If wt[n-1] > W, skip the item and call knapsack(wt, val, n-1, W).
+        - Else:
+            Include = val[n-1] + knapsack(wt, val, n-1, W - wt[n-1])
+            Exclude = knapsack(wt, val, n-1, W)
+            Return max(Include, Exclude)
+Step 5: Call the function and store the result.
+Step 6: Display the maximum profit.
+
+Time Complexity:
+Best Case: O(2^n)
+Average Case: O(2^n)
+Worst Case: O(2^n)
+
+Space Complexity:
+O(n) (due to recursion stack)
+
+Use Cases:
+- Resource allocation problems
+- Budget optimization under constraints
+
+18. Activity Selection Problem
+ Aim:
+To implement a C++ program to select the maximum number of non-overlapping activities using a greedy approach.
+
+Algorithm:
+Step 1: Read the number of activities n.
+Step 2: Input start and finish times of all activities.
+Step 3: Sort all activities in increasing order of their finish time.
+Step 4: Select the first activity (earliest finishing).
+Step 5: For remaining activities:
+        - If start time of current activity >= finish time of last selected activity:
+            Select the activity
+Step 6: Repeat until all activities are checked.
+Step 7: Display the selected activities.
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+
+Space Complexity:
+O(1) (in-place sorting, no extra space used apart from variables)
+
+Use Cases:
+- Scheduling meetings in a room
+- CPU process scheduling
+
+19. Dijkstra's Algorithm
+Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices using Dijkstra’s algorithm.
+
+Algorithm:
+Step 1: Read the number of vertices n.
+Step 2: Input the adjacency matrix of the graph.
+Step 3: Read the source vertex.
+Step 4: Initialize distance array dist[] with infinity and visited[] as false.
+Step 5: Set dist[source] = 0.
+Step 6: Repeat n-1 times:
+        - Find the unvisited vertex with minimum distance (u).
+        - Mark u as visited.
+        - For all adjacent vertices v of u:
+            If v is not visited and there is an edge (graph[u][v] != 0)
+            and dist[u] + graph[u][v] < dist[v]:
+                Update dist[v].
+Step 7: Display shortest distances from source to all vertices.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n) (for distance and visited arrays)
+
+Use Cases:
+- Finding shortest path in road networks
+- Network routing protocols
+
+20. Kruskal's Algorithm
+Aim:To implement a C++ program to find the Minimum Spanning Tree (MST) of a graph using Kruskal’s algorithm.
+
+Algorithm:
+Step 1: Read the number of vertices n.
+Step 2: Input the cost (adjacency) matrix of the graph.
+Step 3: Initialize parent array such that each vertex is its own parent.
+Step 4: Set edges = 0 and total cost = 0.
+Step 5: While edges < n-1:
+        - Find the minimum cost edge (u, v) in the matrix.
+        - Find the parent of u and v using find().
+        - If parents are different:
+            Include the edge in MST
+            Add its cost to total
+            Perform union of the sets
+            Increment edge count
+        - Mark the edge as used (set cost to large value)
+Step 6: Repeat until MST has n-1 edges.
+Step 7: Display all selected edges and total cost.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n) (for parent array)
+
+Use Cases:
+- Designing network connections (like cables, roads)
+- Minimum cost infrastructure planning
+
+21. Prim's Algorithm
+Aim:To implement a C++ program to find the Minimum Spanning Tree (MST) of a graph using Prim’s algorithm.
+
+Algorithm:
+Step 1: Read the number of vertices n.
+Step 2: Input the cost (adjacency) matrix of the graph.
+Step 3: Initialize a visited array and mark the starting vertex as visited.
+Step 4: Set edges = 0 and total cost = 0.
+Step 5: While edges < n-1:
+        - Find the minimum cost edge (a, b) such that:
+            a is visited and b is not visited.
+        - Select this edge and add it to MST.
+        - Add its cost to total.
+        - Mark vertex b as visited.
+        - Increment edge count.
+Step 6: Repeat until MST has n-1 edges.
+Step 7: Display all selected edges and total cost.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n) (for visited array)
+
+Use Cases:
+- Network design (minimum wiring or cabling)
+- Road and bridge construction planning
+
+22. Dijkstra’s Algorithm (with path tracing)
+Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices and display the paths using Dijkstra’s algorithm.
+
+Algorithm:
+Step 1: Read the number of vertices n and edges e.
+Step 2: Initialize adjacency matrix with INF (infinity).
+Step 3: Input all edges (u, v, w) and store weights in the matrix.
+Step 4: Read the source vertex.
+Step 5: Initialize:
+        - dist[] = INF for all vertices
+        - visited[] = 0
+        - parent[] = -1
+Step 6: Set dist[source] = 0.
+Step 7: Repeat n-1 times:
+        - Find unvisited vertex u with minimum distance.
+        - Mark u as visited.
+        - For each adjacent vertex v:
+            If not visited and edge exists:
+                If dist[u] + weight(u,v) < dist[v]:
+                    Update dist[v]
+                    Set parent[v] = u
+Step 8: Print shortest distances.
+Step 9: For each vertex, reconstruct path using parent[] array and display it.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n²) (for adjacency matrix) + O(n) (for arrays)
+
+Use Cases:
+- Navigation systems (shortest route finding)
+- Network routing and path optimization
+
+23. Multistage Graph (Stage Identification)
+Aim:To implement a C++ program to determine the number of stages in a multistage graph using adjacency matrix representation.
+
+Algorithm:
+Step 1: Read the number of vertices n.
+Step 2: Input the adjacency matrix of the graph.
+Step 3: Initialize first stage with source vertex (0).
+Step 4: Store stages using a vector of sets.
+Step 5: For each stage:
+        - For every vertex in current stage:
+            Check all adjacent vertices.
+            If edge exists, add them to next stage.
+Step 6: Continue until no new vertices are found.
+Step 7: Count total number of stages.
+Step 8: Display the number of stages.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n²) (adjacency matrix) + O(n) (for storing stages)
+
+Use Cases:
+- Used in multistage graph problems (like shortest path in stages)
+- Useful in dynamic programming and decision-making processes
+
+24. Matrix Chain Multiplication
+Aim:To implement a C++ program to find the optimal order of matrix multiplication that minimizes the total number of scalar multiplications using dynamic programming.
+
+Algorithm:
+Step 1: Read the number of matrices n.
+Step 2: Input the dimensions array p[].
+Step 3: Initialize two matrices:
+        - m[][] to store minimum multiplication cost
+        - s[][] to store split positions
+Step 4: For chain length = 2 to n-1:
+        For each i:
+            j = i + length - 1
+            Set m[i][j] = infinity
+            For k = i to j-1:
+                cost = m[i][k] + m[k+1][j] + p[i-1]*p[k]*p[j]
+                If cost < m[i][j]:
+                    Update m[i][j]
+                    Store k in s[i][j]
+Step 5: Minimum cost is m[1][n-1].
+Step 6: Use recursive function to print optimal parenthesization using s[][].
+Step 7: Display minimum cost and multiplication order.
+
+Time Complexity:
+Best Case: O(n³)
+Average Case: O(n³)
+Worst Case: O(n³)
+
+Space Complexity:
+O(n²) (for m and s matrices)
+
+Use Cases:
+- Optimizing matrix multiplication in computations
+- Used in compiler optimization and scientific computing
+
+25. Multistage Graph
+Aim:To implement a C++ program to find the shortest path in a multistage graph using dynamic programming.
+
+Algorithm:
+Step 1: Read the number of vertices n.
+Step 2: Input the adjacency matrix of the graph.
+Step 3: Divide the graph into stages starting from source vertex (0).
+Step 4: Initialize cost array with infinity and set cost[n-1] = 0 (destination).
+Step 5: Traverse vertices from n-2 to 0:
+        For each vertex i:
+            For each vertex j:
+                If edge exists from i to j:
+                    If cost[i] > cost[j] + weight(i,j):
+                        Update cost[i]
+                        Store next vertex in d[i]
+Step 6: Reconstruct path starting from source using d[] array.
+Step 7: Display the stages and shortest path.
+
+Time Complexity:
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+Space Complexity:
+O(n²) (adjacency matrix) + O(n) (cost and path arrays)
+
+Use Cases:
+- Multistage decision problems (like shortest path with stages)
+- Network routing and optimization in layered systems
+
+26. Bellman-Ford Algorithm
+Aim:To implement a C++ program to find the shortest path from a source vertex to all other vertices using the Bellman-Ford algorithm.
+
+Algorithm:
+Step 1: Read the number of vertices V and edges E.
+Step 2: Input all edges in the format (source, destination, weight).
+Step 3: Read the source vertex.
+Step 4: Initialize distance array dist[] with infinity for all vertices.
+Step 5: Set dist[source] = 0.
+Step 6: Repeat V-1 times:
+        For each edge (u, v, w):
+            If dist[u] is not infinity and dist[u] + w < dist[v]:
+                Update dist[v]
+Step 7: Check for negative weight cycle:
+        For each edge (u, v, w):
+            If dist[u] + w < dist[v]:
+                Report negative cycle and exit.
+Step 8: Display shortest distances from source to all vertices.
+
+Time Complexity:
+Best Case: O(VE)
+Average Case: O(VE)
+Worst Case: O(VE)
+
+Space Complexity:
+O(V) (for distance array)
+
+Use Cases:
+- Graphs with negative edge weights
+- Network routing and financial calculations (currency arbitrage detection)
+
+27. Travelling Salesman Problem
+Aim:To implement a C++ program to find the minimum travelling cost using the Travelling Salesman Problem (TSP) with backtracking.
+
+Algorithm:
+Step 1: Read the number of cities n.
+Step 2: Input the cost matrix representing distances between cities.
+Step 3: Initialize visited array to mark visited cities.
+Step 4: Mark the starting city (0) as visited.
+Step 5: Define recursive function tsp(city, count, cost):
+        - If all cities are visited and return path exists:
+            Return total cost including return to starting city.
+        - Initialize minimum cost as infinity.
+        - For each city i:
+            If not visited and edge exists:
+                Mark city i as visited.
+                Recursively call tsp for next city.
+                Update minimum cost.
+                Backtrack (mark city i as unvisited).
+Step 6: Call tsp from starting city.
+Step 7: Display minimum travelling cost.
+
+Time Complexity:
+Best Case: O(n!)
+Average Case: O(n!)
+Worst Case: O(n!)
+
+Space Complexity:
+O(n) (for recursion stack and visited array)
+
+Use Cases:
+- Route optimization (delivery systems)
+- Traveling and logistics planning
