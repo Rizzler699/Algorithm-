@@ -1,21 +1,16 @@
 # Algorithm-
 
 1. Power of xⁿ using Binary Exponentiation (Iterative)
-
 Aim
-
 To efficiently compute the value of x^n using Binary Exponentiation (Iterative Method) with reduced time complexity.
-
 Algorithm
 int pow(int x, int n)
 {
     if (n == 0)
         return 1;
-
     int m = n;
     int z = x;
     int pow_result = 1;
-
     while (m > 1)
     {
         if (m % 2 == 0)
@@ -32,22 +27,6 @@ int pow(int x, int n)
     return pow_result;
 }
 
-
-Steps:
-
-If the exponent is 0, return 1.
-
-Initialize result as 1.
-
-While exponent is greater than 1:
-
-If exponent is even, square the base and halve the exponent.
-
-If exponent is odd, multiply result with base and decrement exponent.
-
-Return the final result.
-
-
 Time Complexity:
 O(logn)
 (Exponent is reduced by half in each step)
@@ -57,21 +36,12 @@ O(1)
 (Iterative method uses constant extra space)
 
 Use Cases
-
 Fast computation of large powers
-
 Cryptographic algorithms such as RSA and Diffie–Hellman
 
-Competitive programming problems
-
-Numerical and scientific computations
-
-Applications requiring efficient exponentiation
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  2. Permutation Generation using Recursion
-
 Aim
 To generate all possible permutations of a given set of characters using recursion and analyze the execution time for different input sizes.
 
@@ -89,45 +59,27 @@ void permute(char a[], int l, int r)
     }
 }
 
-
 Steps:
-
 Fix one character at position l.
-
 Swap it with every character from index l to r.
-
 Recursively generate permutations for the remaining characters.
-
 Restore the original order using backtracking.
-
 Repeat until all permutations are generated.
 
 Time Complexity
-
 Number of permutations of n elements = n!
-
 Each permutation takes constant time to generate.
-
 Time Complexity:
 O(n!)
-
 Space Complexity:
 O(n)
 (due to recursion stack)
 
 Use Cases
-
 Generating all possible arrangements of characters or numbers
-
 Solving combinatorial problems
 
-Used in problems like anagrams and string rearrangements
-
-Backtracking-based problem solving
-
-Educational purposes to understand recursion and backtracking
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  3. Polynomial Evaluation using Horner’s Rule
 
@@ -170,27 +122,18 @@ void Toh(int n, char F, char U, char T)
     Toh(n - 1, U, F, T);   // Move n−1 disks from auxiliary to destination
 }
 
-
 Steps:
-
 If the number of disks is 0, stop the recursion.
-
 Recursively move n−1 disks from the source peg to the auxiliary peg.
-
 Recursively move n−1 disks from the auxiliary peg to the destination peg.
-
 Repeat the process until all disks are moved.
 
 Time Complexity
-
 For each disk, the function makes two recursive calls.
-
 Total number of moves required for n disks = 2^n-1
-
 
 Time Complexity:
 O(2^n)
-
 Space Complexity:
 O(n)
 (due to recursion stack)
@@ -198,15 +141,7 @@ O(n)
 Use Cases
 
 Understanding recursion and divide-and-conquer strategy
-
 Teaching and learning recursion concepts
-
-Analyzing exponential time complexity
-
-Used as a classic problem in algorithm design courses
-
-Helps in understanding stack-based function calls
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -232,47 +167,29 @@ void bubbleSort(int arr[], int n)
 
 
 Steps:
-
 Start from the first element of the array.
-
 Compare adjacent elements.
-
 Swap them if they are in the wrong order.
-
 After each pass, the largest element moves to its correct position.
-
 Repeat until the array is completely sorted.
 
 Time Complexity
-
 Bubble sort repeatedly compares adjacent elements.
-
 Best Case (Already Sorted):
 O(n)
-
 Average Case:
 O(n^2)
-
 Worst Case (Reverse Sorted):
 O(n^2)
-
 Space Complexity:
 O(1)
 (in-place sorting algorithm)
 
 Use Cases
-
 Sorting small datasets
-
 Educational purposes to understand sorting algorithms
 
-Situations where simplicity is preferred over efficiency
-
-Demonstrating quadratic time complexity
-
-Useful when memory usage must be minimal
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 6. Selection Sort (Time Complexity Analysis)
 
@@ -294,52 +211,30 @@ void selectionSort(int arr[], int n)
     }
 }
 
-
 Steps:
-
 Assume the first element is the minimum.
-
 Compare it with all remaining elements in the array.
-
 Find the smallest element in the unsorted part.
-
 Swap it with the first unsorted element.
-
 Repeat until the entire array is sorted.
 
 Time Complexity
-
 Selection sort always performs the same number of comparisons.
-
 Best Case:
 O(n^2)
-
 Average Case:
 O(n^2)
-
 Worst Case:
 O(n^2)
-
 Space Complexity:
 O(1)
 (in-place sorting algorithm)
 
 Use Cases
-
 Sorting small datasets
-
 Situations where minimum number of swaps is required
 
-Educational purposes to understand sorting algorithms
-
-Useful when memory usage must be minimal
-
-Demonstrating quadratic time complexity
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  7. Finding the Missing Number in a Sequence
 
@@ -356,35 +251,21 @@ Algorithm
 7. The result is the missing number.
 
 Explanation
-
 The array contains consecutive numbers with exactly one number missing.
-
 The sum of consecutive numbers from a to b is calculated.
-
 The sum of the given array elements is calculated.
-
 The difference between these two sums gives the missing number.
-
 
 Time Complexity:
 O(n)
 (Single traversal of the array)
-
 Space Complexity:
 O(1)
 (Only variables are used, no extra space)
 
 Use Cases
-
 Finding missing numbers in sorted sequences
-
 Data validation and error detection
-
-Competitive programming problems
-
-Detecting missing roll numbers or IDs
-
-Simple numerical analysis problems
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -402,56 +283,34 @@ int NumDips(double v)
     return 1 + NumDips(v - 0.425 * v);
 }
 
-
 Steps:
-
 Take the initial velocity of the ball as input.
-
 If the velocity becomes less than 1.0, stop recursion.
-
 Reduce the velocity by 42.5% of its current value.
-
 Call the function recursively with the reduced velocity.
-
 Count each recursive call as one dip.
-
 Continue until the stopping condition is met.
 
 Time Complexity
-
 The velocity is multiplied by a constant factor (0.575) in each step.
-
 Hence, the number of recursive calls grows logarithmically.
-
 Time Complexity:
 O(logv)
-
 Space Complexity:
 O(logv)
 (due to recursion stack)
 
 Use Cases
-
 Simulation of ball motion and velocity decay
-
 Modeling exponential decay processes
 
-Understanding recursion with real-valued inputs
-
-Demonstrating logarithmic time complexity
-
-Educational applications in physics-based algorithms
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  9. Truth Table Generation 
-
  Aim
-
 To generate truth tables for n boolean variables and analyze exponential growth.
 
  Algorithm (BTT)
-
 void BTT(int k, int n)
 {
     if (k > n)
@@ -463,7 +322,6 @@ void BTT(int k, int n)
     a[k] = false;
     BTT(k + 1, n);
 }
-  
 
  Time Complexity
 * Time: O(2^n)
@@ -477,7 +335,6 @@ Exhaustive testing for small boolean input problems
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 10. Linear Search (Worst Case Time Complexity Analysis)
-
 Aim
 To search an element in an array using Linear Search and analyze its worst-case execution time for different input sizes.
 
@@ -492,63 +349,42 @@ int linearSearch(int arr[], int n, int key)
     return -1;
 }
 
-
 Steps:
-
 Start from the first element of the array.
-
 Compare each element with the key.
-
 If the key is found, return its index.
-
 If the end of the array is reached, return -1.
-
 Repeat the process for different input sizes.
-
 Measure execution time and compute the average.
 
 Worst Case Explanation
 
 Worst case occurs when:
-
 The element is at the last position, or
-
 The element is not present in the array.
-
 In this program, the key is chosen as arr[n-1], which forces the worst case.
 
 Time Complexity
-
 Best Case:
 O(1) (element found at first position)
-
 Average Case:
 O(n)
-
 Worst Case:
 O(n)
-
 Space Complexity:
 O(1)
 
 Use Cases
-
 Searching in unsorted arrays
-
 Small datasets where simplicity is preferred
-
 Educational demonstration of searching algorithms
-
 Situations where data changes frequently
-
 Linear scans in system utilities and logs
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 11. Binary Search
-
 Aim
-
 To efficiently search an element in a sorted array using Binary Search and analyze its worst-case time complexity.
 
 Algorithm
@@ -569,35 +405,23 @@ void binarySearch(int arr[], int n, int key)
     }
 }
 
-
 Explanation:
-
 Initialize start and end.
-
 Find the middle element.
-
 If the key matches the middle element, search ends.
-
 If the key is smaller, search the left half.
-
 If the key is larger, search the right half.
-
 Repeat until the element is found or the search space becomes empty.
 
 Time Complexity
-
 At each step, the search space is reduced to half.
-
 Best Case:
 O(1)
-
 Average Case:
 O(logn)
-
 Worst Case:
 O(logn)
 (when the element is not present in the array)
-
 Space Complexity:
 O(1)
 (iterative implementation)
@@ -605,21 +429,15 @@ O(1)
 Use Cases
 
 Searching elements in sorted arrays
-
 Database indexing and fast lookups
-
 Searching in dictionaries and phone directories
-
 Efficient searching in large datasets
-
 Used in competitive programming and system software
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 12. Insertion Sort
-
 Aim
-
 To sort a list of numbers using Insertion Sort and analyze its average execution time for different input sizes.
 
 Algorithm
@@ -639,177 +457,108 @@ void insertionSort(int arr[], int n)
     }
 }
 
-
 Explanation:
-
 Start from the second element of the array.
-
 Store the current element as key.
-
 Compare key with elements to its left.
-
 Shift all larger elements one position to the right.
-
 Insert key at its correct position.
-
 Repeat until the entire array is sorted.
 
 Time Complexity
-
 Insertion sort compares each element with the elements before it.
-
 Best Case (Already Sorted):
 O(n)
-
 Average Case:
 O(n^2)
-
-
 Worst Case (Reverse Sorted):
 O(n^2)
-
 Space Complexity:
 O(1)
 (in-place sorting algorithm)
 
 Use Cases
-
 Sorting small datasets
-
 Efficient when the array is nearly sorted
-
 Used in online sorting (data received one by one)
-
 Used as a subroutine in advanced algorithms like Tim Sort
-
 Simple and easy to implement for educational purposes
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 13. Merge Sort
-
 Aim: To sort an array in ascending order using the Merge Sort algorithm and analyze its execution time.
 
 Algorithm
-
 Read the number of elements n.
-
 Read n elements into an array.
-
 If l < r:
-
 Find mid = (l + r) / 2
-
 Apply Merge Sort on left part (l to mid)
-
 Apply Merge Sort on right part (mid+1 to r)
-
 Merge both sorted parts into one sorted array.
-
 Repeat until the entire array is sorted.
-
 Print the sorted array.
 
 Time Complexity
-
 Best Case: O(n log n)
-
 Average Case: O(n log n)
-
 Worst Case: O(n log n)
-
 Space Complexity
-
 Space: O(n)
 
 Use Cases
-
 Used for sorting large datasets.
-
 Suitable for external sorting (file sorting).
-
 Useful when stable sorting is required.
-
 Used in linked list sorting.
-
 Applied in divide and conquer based applications
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 14. Quick Sort
-
 Aim: To sort an array in ascending order using the Quick Sort algorithm and analyze its execution time.
 
 Algorithm
-
 Read the number of elements n.
-
 Read n elements into an array.
-
 Select the first element as the pivot.
-
 Rearrange the array so that:
-
 Elements greater than pivot go to the right side.
-
 Elements smaller than pivot go to the left side.
-
 Place the pivot in its correct position.
-
 Apply Quick Sort on left and right subarrays.
-
 Repeat until the entire array is sorted.
-
 Print the sorted array.
 
 Time Complexity
-
 Best Case: O(n log n)
-
 Average Case: O(n log n)
-
 Worst Case: O(n²)
-
 Space Complexity
-
 Space: O(log n) (Recursive stack)
 
 Use Cases
-
 Used for fast in-memory sorting.
-
 Suitable for large datasets.
-
 Commonly used in system libraries.
-
 Useful in competitive programming.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 15. Finding kth smallest element using partition algorithm.
-
 Aim: To implement a C++ program to find the kth smallest element in an array using the Quick Sort algorithm and analyze its efficiency.
 
 Algorithm
-
 Step 1: Read the size of the array n.
-
 Step 2: Input n elements into the array.
-
 Step 3: Read the value of k (position of the smallest element to find).
-
 Step 4: Use the partition() function to place the pivot element at its correct position.
-
 Step 5: Compare the pivot position with k:
-
 If pivot position + 1 == k, return that element.
-
 If pivot position + 1 < k, search in the right sub-array.
-
 If pivot position + 1 > k, search in the left sub-array.
-
 Step 6: Repeat the process recursively until the kth smallest element is found.
-
 Step 7: Display the result.
 
 Time Complexity
@@ -818,10 +567,8 @@ Best Case	        O(n)
 Average Case       	O(n)
 Worst Case          O(n²)
 
-
 Explanation:
 In most cases, the array is divided into two parts, so it runs in linear time.
-
 In the worst case (already sorted array), the pivot is always smallest/largest, leading to O(n²).
 
 Space Complexity
@@ -829,13 +576,30 @@ O(1) (In-place algorithm, no extra array is used)
 
 Use Cases
 Finding the kth smallest/largest score in a class.
-
 Selecting the median of a dataset.
 
-Ranking systems (finding top-k elements).
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Data analysis for percentile calculations.
+16. Aim:To implement a C++ program to find the Convex Hull of a set of points using a brute force approach.
 
-Competitive programming problems.
+Algorithm
+Step 1: Read the number of points n.
+Step 2: Input all coordinate points.
+Step 3: Assume all points are part of the convex hull.
+Step 4: For each point P, form triangles using every combination of three other points (A, B, C).
+Step 5: Check if P lies inside triangle (A, B, C) using orientation.
+Step 6: If inside any triangle, mark P as not part of the hull.
+Step 7: Repeat for all points.
+Step 8: Print points that remain marked as convex hull.
 
-Applied in real-time applications where speed is important.
+Time Complexity
+Best Case: O(n⁴)
+Average Case: O(n⁴)
+Worst Case: O(n⁴)
+
+Space Complexity
+O(n)
+
+Use Cases
+Finding boundary points in computer graphics
+Used in geographical mapping (GIS)
